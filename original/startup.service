@@ -1,0 +1,11 @@
+[Unit]
+Description=A server for streaming Motion-JPEG from /dev/video0 - Microsoft LifeCam VX-2000 (045e:0761)
+After=network.target
+
+[Service]
+ExecStart=[PATH_TO]/startup_[DEVICE].sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
