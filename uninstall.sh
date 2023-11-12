@@ -19,8 +19,8 @@ minor_step "Disabling mjpg_streamer_${SERVICE} startup daemon"
 sudo systemctl disable "mjpg_streamer_${SERVICE}.service"
 continue_if_succeeded
 
-minor_step "Deleting repository"
-rm -rf mjpg-streamer
+# minor_step "Deleting repository"
+# rm -rf mjpg-streamer
 
 minor_step "Deleting mjpg_streamer_${SERVICE}.service"
 sudo rm "/etc/systemd/system/mjpg_streamer_${SERVICE}.service"
