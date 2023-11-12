@@ -21,7 +21,7 @@ sudo apt-get install cmake libjpeg62-turbo-dev -y
 continue_if_succeeded
 
 step "mjpg-streamer"
-if [ -d "mjpg-streamer" ]; then
+if ! [ -d "mjpg-streamer" ]; then
   minor_step "Cloning repository"
   (rm -rf mjpg-streamer ; git clone https://github.com/jacksonliam/mjpg-streamer.git)
   continue_if_succeeded
