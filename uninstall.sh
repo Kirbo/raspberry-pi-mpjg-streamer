@@ -28,12 +28,10 @@ sudo rm "/etc/systemd/system/mjpg_streamer_${SERVICE}.service"
 minor_step "Deleting startup_${SERVICE}.sh"
 rm "startup_${SERVICE}.sh"
 
-minor_step "Do you want to remove the 'cmake libjpeg8-dev' dependencies as well? [y/N]: "
-read -n1 remove_dependencies
-
-step "Removing dependencies"
+step "Do you want to remove the '${GREEN}cmake libjpeg8-dev${NORMAL}' dependencies as well? [y/N]: "
+read -rn1 remove_dependencies
 if [[ "${remove_dependencies}" == "y" ]]; then
-  minor_step "Deleting dependencies..."
+  minor_step "Removing dependencies..."
   sudo apt remove cmake libjpeg8-dev -y
 else
   minor_step "Skipped!"
