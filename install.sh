@@ -23,7 +23,7 @@ continue_if_succeeded
 step "mjpg-streamer"
 if ! [ -d "mjpg-streamer" ]; then
   minor_step "Cloning repository"
-  (rm -rf mjpg-streamer ; git clone https://github.com/jacksonliam/mjpg-streamer.git)
+  git clone https://github.com/jacksonliam/mjpg-streamer.git
   continue_if_succeeded
 else
   minor_step "Updating repository"
